@@ -41,7 +41,7 @@ Buka browser lokal di `http://localhost:8501`
 
 atau
 
-Buka di browser melalui tautan berikut 
+Buka di browser melalui tautan berikut `https://sinomiai-dashboard.streamlit.app/`
 
 ---
 
