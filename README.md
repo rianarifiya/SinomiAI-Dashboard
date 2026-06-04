@@ -1,57 +1,130 @@
-# SinomiAI Dashboard 🌿♻️
+# SinomiAI Dashboard
+---
 
-Dashboard analitik interaktif untuk proyek Capstone **SinomiAI** — platform klasifikasi dan rekomendasi pengolahan limbah berbasis AI.
+**SinomiAI Dashboard** adalah dashboard interaktif berbasis Streamlit yang menampilkan hasil analisis data dan performa model machine learning dari proyek capstone **CC26-PSU343**. Dashboard ini memvisualisasikan seluruh pipeline data science mulai dari eksplorasi data, pemrosesan fitur, hingga evaluasi model CNN untuk klasifikasi sampah **Organik** dan **Anorganik**.
 
 ---
 
-## 📦 Cara Deploy ke Streamlit Cloud
+## Tampilan Dashboard
 
-### 1. Upload ke GitHub
-Buat repository baru dan upload dua file ini:
-```
-sinomi_dashboard/
-├── app.py
-└── requirements.txt
-```
+Dashboard terdiri dari **5 halaman utama**:
 
-### 2. Deploy di Streamlit Community Cloud
-1. Buka [share.streamlit.io](https://share.streamlit.io)
-2. Klik **"New app"**
-3. Hubungkan repository GitHub Anda
-4. Set **Main file path** → `app.py`
-5. Klik **"Deploy!"**
-
-### 3. Akses Dashboard
-Setelah deploy, Anda akan mendapatkan URL publik seperti:
-`https://sinomi-ai-dashboard.streamlit.app`
-
----
-
-## 🗂️ Isi Dashboard
-
-| Halaman | Konten |
+| Halaman | Deskripsi |
 |---|---|
-| 🏠 **Overview** | Hero banner, KPI cards, ringkasan proyek & pipeline |
-| 📊 **Dataset & EDA** | Distribusi kelas, sub-kelas material, analisis resolusi |
-| ⚙️ **Preprocessing** | Data cleaning, feature engineering, augmentasi |
-| 🤖 **Model & Performa** | Arsitektur CNN, kurva training, classification report |
-| 📋 **Ringkasan** | Temuan utama, roadmap, kesimpulan |
+| Ringkasan Proyek | KPI utama, deskripsi proyek, teknologi, dan capaian model |
+| Eksplorasi Data | Distribusi kelas, resolusi gambar, aspect ratio, dan sub-kelas material |
+| Pemrosesan & Fitur | Pipeline data wrangling, hasil cleaning, dan teknik augmentasi |
+| Performa Model | Kurva akurasi & loss (A/B Testing), classification report, arsitektur CNN |
+| Tim Peneliti | Profil anggota tim dan informasi proyek |
 
 ---
 
-## 🎨 Desain
+## Cara Menjalankan
 
-- **Tema**: Dark mode dengan aksen hijau (#56D364) dan biru (#58A6FF)
-- **Tipografi**: Syne (heading) + DM Sans (body)
-- **Visualisasi**: Plotly interactive charts (pie, bar, scatter, heatmap, radar)
-- **Layout**: Responsive multi-column dengan card components
+### Prasyarat
+- Python 3.9 atau lebih baru
+- pip
+
+### Install Dependensi
+
+```bash
+pip install -r requirements.txt
+```
+
+### Jalankan Dashboard
+
+```bash
+streamlit run dashboard.py
+```
+
+Buka browser lokal di `http://localhost:8501`
+
+atau
+
+Buka di browser melalui tautan berikut 
 
 ---
 
-## 👥 Tim CC26-PSU343
+## 📁 Struktur Folder
 
-- Riana Shofiatul Khoeriyah
-- Mohammad Fahriza Pratama
-- Yildi Andriana
-- Muhammad Irsyad Mustaqim
-- Madda Athia Rahman
+```
+SinomiAI Dashboard/
+├── dashboard.py          # File utama Streamlit
+├── requirements.txt      # Daftar dependensi Python
+├── README.md             # Dokumentasi proyek
+└── assets/
+    └── logo_sinomiai.png # Logo SinomiAI
+```
+
+---
+
+## 📦 Dependensi
+
+| Package | Versi Minimum | Kegunaan |
+|---|---|---|
+| streamlit | 1.35.0 | Framework dashboard |
+| pandas | 2.0.0 | Pengolahan data tabular |
+| plotly | 5.18.0 | Visualisasi interaktif |
+| numpy | 1.24.0 | Komputasi numerik |
+| pillow | 10.0.0 | Pemrosesan gambar |
+
+---
+
+## ☁️ Deploy ke Streamlit Cloud
+
+1. Fork atau push repository ini ke GitHub
+2. Buka [share.streamlit.io](https://share.streamlit.io)
+3. Login dengan akun GitHub
+4. Klik **"New app"** dan isi:
+   - **Repository**: `username/nama-repo`
+   - **Branch**: `main`
+   - **Main file path**: `dashboard.py`
+5. Klik **Deploy** — selesai ✅
+
+> Pastikan folder `assets/` ikut ter-push ke GitHub agar logo tampil dengan benar.
+
+---
+
+## 📊 Dataset
+
+| Kategori | Jumlah Gambar | Proporsi |
+|---|---|---|
+| Anorganik | 1.010 | 56,17% |
+| Organik | 788 | 43,83% |
+| **Total** | **1.798** | **100%** |
+
+- Format gambar: `.jpg`, `.jpeg`, `.png`
+- Ukuran input model: `150 × 150` piksel
+- Split dataset: **80% latih / 20% validasi**
+
+---
+
+## 🤖 Hasil Model CNN
+
+| Metrik | Anorganik | Organik | Weighted Avg |
+|---|---|---|---|
+| Precision | 0.99 | 0.98 | 0.99 |
+| Recall | 0.99 | 0.99 | 0.99 |
+| F1-Score | 0.99 | 0.98 | 0.99 |
+| **Akurasi** | — | — | **99%** |
+
+Arsitektur: CNN 3 lapisan konvolusi (32 → 64 → 128 filter) + Dense 512 + Dropout 0.5, dilatih selama **10 epoch**.
+
+---
+
+## 👥 Tim
+
+| Nama | ID |
+|---|---|
+| Riana Shofiatul Khoeriyah | CDCC222D6X0570 |
+| Mohammad Fahriza Pratama | CFCC222D6Y1056 |
+| Yildi Andriana | CDCC222D6Y1231 |
+| Muhammad Irsyad Mustaqim | CACC222D6Y1363 |
+| Madda Athia Rahman | CFCC222D6Y2794 |
+
+**Tim:** CC26-PSU343
+
+---
+
+
+*© 2025 SinomiAI · Tim CC26-PSU343*
