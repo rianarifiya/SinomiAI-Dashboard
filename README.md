@@ -62,11 +62,10 @@ SinomiAI Dashboard/
 
 | Package | Versi Minimum | Kegunaan |
 |---|---|---|
-| streamlit | 1.35.0 | Framework dashboard |
+| streamlit | 1.33.0 | Framework dashboard |
 | pandas | 2.0.0 | Pengolahan data tabular |
-| plotly | 5.18.0 | Visualisasi interaktif |
 | numpy | 1.24.0 | Komputasi numerik |
-| pillow | 10.0.0 | Pemrosesan gambar |
+| plotly | 5.18.0 | Visualisasi interaktif |
 
 ---
 
